@@ -3,8 +3,15 @@ application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    return "Hello World!"
-
+    hostname = socket.gethostname()
+    host_ip = socket.gethostbyname(hostname)
+    currentDT = datetime.datetime.now()
+    currentDT_formatted = currentDT.strftime("%Y-%m-%d %H:$M:$S")
+                                             
+    return currentDT_formatted +": Hello World! This is a message from host: " + hostname + " (" + host_ip + ") \n"
+                                             
+                                             
+                                             
 @application.route("/ready")
 def ready():
     return "Ready!"
