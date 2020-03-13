@@ -9,7 +9,7 @@ def hello():
     hostname = socket.gethostname()
     host_ip = socket.gethostbyname(hostname)
     currentDT = datetime.datetime.now()
-    currentDT_formatted = currentDT.strftime("%Y-%m-%d %H:$M:$S")
+    currentDT_formatted = currentDT.strftime("%Y-%m-%d %H:%M:%S")
                                              
     return currentDT_formatted +": Hello World! This is a message from host: " + hostname + " (" + host_ip + ") \n"
                                              
